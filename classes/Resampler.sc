@@ -1,5 +1,7 @@
 Resampler {
   var <>samplers;
+  var >server;
+  var >recordPath;
 
   *new {
     | path |
@@ -10,11 +12,9 @@ Resampler {
     | path |
     var window;
     var controlsView;
-    var recordPath;
     var pathButton;
     var recordButton;
     var syncButton;
-    var server;
     var meter;
 
     server = Server.local;

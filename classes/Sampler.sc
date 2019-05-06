@@ -44,14 +44,14 @@ RSampler {
     .states_([
       ["play", ResamplerColors.white, ResamplerColors.backgroundLight]
     ]).action_({
-      this.startPlaying();
+      this.prStartPlaying();
     });
 
     loopTrigger = CheckBox()
     .string_("loop")
     .action_({
       |checkbox|
-      this.setLooping(checkbox.value);
+      this.prSetLooping(checkbox.value);
     });
 
     rateKnob = Knob()
@@ -62,9 +62,10 @@ RSampler {
 	  ResamplerColors.white
 	])
     .value_(rate)
+	.centered_(true)
     .action_({
       |knob|
-      this.setRate(knob.value.linlin(0.0, 1.0, -1, 1));
+      this.prSetRate(knob.value.linlin(0.0, 1.0, -1, 2));
     });
 
     gainKnob = Knob()
@@ -77,12 +78,7 @@ RSampler {
     .value_(gain)
     .action_({
       |knob|
-      gain = knob.value;
-      if (player.isPlaying,
-        {
-          player.set(\amp, gain);
-        }
-      );
+	  this.prSetGain(knob.value);
     });
 
     view = VLayout(
@@ -122,7 +118,7 @@ RSampler {
     );
   }
 
-  startPlaying {
+  prStartPlaying {
     var start, end;
     start = sfView.selection(0)[0];
     end = sfView.selection(0)[1];
@@ -138,7 +134,11 @@ RSampler {
     this.play(buffer);
   }
 
-  setLooping {
+  startPlaying {
+    playButton.valueAction_();
+  }
+
+  prSetLooping {
     |bool|
     if (bool.value,
       {loop = true},
@@ -147,13 +147,19 @@ RSampler {
         if (player.isPlaying,
           {
             player.set(\loop, 0);
+			player.free;
           }
         );
       },
     );
   }
 
-  setRate {
+  setLooping {
+    |bool|
+    loopTrigger.valueAction_(bool);
+  }
+
+  prSetRate {
     |value|
     rate = value;
     if (player.isPlaying,
@@ -162,14 +168,24 @@ RSampler {
       }
     );
   }
+  
+  setRate {
+    |float|
+	rateKnob.valueAction_(float);
+  }
 
-  setGain {
+  prSetGain {
     |value|
     if (player.isPlaying,
       {
         player.set(\amp, value);
       }
     );
+  }
+
+  setGain {
+	|float|
+	gainKnob.valueAction_(float);
   }
 
   play {
