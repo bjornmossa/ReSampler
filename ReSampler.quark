@@ -1,0 +1,9 @@
+(
+  name: "ReSampler",
+  summary: "A sampler/granular synth with gui",
+  version: "1.0.0",
+  schelp: "ReSampler",
+  dependencies: [],
+  license: "GPL",
+  copyright: "Lambda 2019"  
+)
