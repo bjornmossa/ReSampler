@@ -1,4 +1,4 @@
-ResamplerColors {
+ReSamplerColors {
   classvar <background;
   classvar <backgroundLight;
   classvar <red;

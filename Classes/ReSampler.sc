@@ -1,7 +1,7 @@
-Resampler {
-  var <>samplers;
-  var >server;
-  var >recordPath;
+ReSampler {
+  var <samplers;
+  var server;
+  var <>recordPath;
 
   *new {
     | path |
@@ -30,30 +30,30 @@ Resampler {
 
     // create GUI
     pathButton = Button().states_([
-      ["folder", ResamplerColors.white, ResamplerColors.backgroundLight]
+      ["folder", ReSamplerColors.white, ReSamplerColors.backgroundLight]
     ]).action_({
 	  this.changeRecordPath();
     });
 
     recordButton = Button().states_([
-      ["rec", ResamplerColors.white, ResamplerColors.backgroundLight],
-      ["stop", ResamplerColors.white, ResamplerColors.backgroundLight]
+      ["rec", ReSamplerColors.white, ReSamplerColors.backgroundLight],
+      ["stop", ReSamplerColors.white, ReSamplerColors.backgroundLight]
     ]).action_({
       |button|
 	  this.record(button.value);
     });
 
     syncButton = Button().states_([
-      ["sync", ResamplerColors.white, ResamplerColors.backgroundLight],
+      ["sync", ReSamplerColors.white, ReSamplerColors.backgroundLight],
     ]).action_({
       this.playAll();
     });
 
     window = Window("SampleTransformer", Rect(0, 0, 1000, 550));
-    window.background = ResamplerColors.background;
+    window.background = ReSamplerColors.background;
 
     meter = ServerMeterView(server, window, 0@0, 0, 2);
-    samplers = Array.fill(4, {RSampler.new()});
+    samplers = Array.fill(4, {ReSamplerUnit.new()});
 
     window.layout = HLayout(
       GridLayout.rows(

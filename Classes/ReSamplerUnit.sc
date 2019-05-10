@@ -1,4 +1,4 @@
-RSampler {
+ReSamplerUnit {
   var path = nil;
   var soundFile = nil;
   var sfView = nil;
@@ -23,18 +23,18 @@ RSampler {
     sfView = SoundFileView();
     sfView.elasticMode = true;
     sfView.waveColors = [
-      ResamplerColors.yellow,
-      ResamplerColors.yellow
+      ReSamplerColors.yellow,
+      ReSamplerColors.yellow
     ];
 
-    sfView.rmsColor = ResamplerColors.red;
+    sfView.rmsColor = ReSamplerColors.red;
     sfView.gridOn = false;
 
-    sfView.background = ResamplerColors.backgroundLight;
+    sfView.background = ReSamplerColors.backgroundLight;
 
     openButton = Button()
     .states_([
-      ["select file", ResamplerColors.white, ResamplerColors.backgroundLight]
+      ["select file", ReSamplerColors.white, ReSamplerColors.backgroundLight]
     ])
     .action_({
       this.openFile();
@@ -42,7 +42,7 @@ RSampler {
 
     playButton = Button()
     .states_([
-      ["play", ResamplerColors.white, ResamplerColors.backgroundLight]
+      ["play", ReSamplerColors.white, ReSamplerColors.backgroundLight]
     ]).action_({
       this.prStartPlaying();
     });
@@ -56,10 +56,10 @@ RSampler {
 
     rateKnob = Knob()
     .color_([
-	  ResamplerColors.background,
-	  ResamplerColors.background,
-	  ResamplerColors.white,
-	  ResamplerColors.white
+	  ReSamplerColors.background,
+	  ReSamplerColors.background,
+	  ReSamplerColors.white,
+	  ReSamplerColors.white
 	])
     .value_(rate)
 	.centered_(true)
@@ -70,10 +70,10 @@ RSampler {
 
     gainKnob = Knob()
 	.color_([
-	  ResamplerColors.background,
-	  ResamplerColors.background,
-	  ResamplerColors.white,
-	  ResamplerColors.white
+	  ReSamplerColors.background,
+	  ReSamplerColors.background,
+	  ReSamplerColors.white,
+	  ReSamplerColors.white
 	])
     .value_(gain)
     .action_({
