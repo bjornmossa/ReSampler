@@ -1,0 +1,108 @@
+TITLE:: ReSamplerUnit
+summary:: (put short description here)
+categories:: Undocumented classes
+related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff, etc.
+
+DESCRIPTION::
+(put long description here)
+
+
+CLASSMETHODS::
+
+METHOD:: new
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+
+INSTANCEMETHODS::
+
+METHOD:: openFile
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setRate
+(describe method here)
+
+ARGUMENT:: float
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: startPlaying
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetRate
+(describe method here)
+
+ARGUMENT:: value
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: view
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setLooping
+(describe method here)
+
+ARGUMENT:: bool
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prStartPlaying
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setGain
+(describe method here)
+
+ARGUMENT:: float
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetLooping
+(describe method here)
+
+ARGUMENT:: bool
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: play
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: stop
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetGain
+(describe method here)
+
+ARGUMENT:: value
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: init
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+
+EXAMPLES::
+
+code::
+(some example code)
+::

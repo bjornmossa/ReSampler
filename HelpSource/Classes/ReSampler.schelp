@@ -1,0 +1,42 @@
+TITLE:: ReSampler
+summary:: A sampler/granular synth with gui
+categories:: Utilities
+related:: Classes/ReSamplerUnit, Reference/SomeRelatedStuff, etc.
+
+DESCRIPTION::
+ReSampler is a standalone sampler contains four independent
+samplers which can be controlled with user interface or external controller. It is possible to select piece of sample, change it speed and gain and also record result
+
+
+CLASSMETHODS::
+
+METHOD:: new
+Creates and show new ReSampler instance.
+
+ARGUMENT:: path
+Optional path for storing recorded samples.
+
+INSTANCEMETHODS::
+
+METHOD:: playAll
+runs .play methods of all samplers.
+  
+METHOD:: changeRecordPath
+Opens File Dialog and store new path for records
+
+METHOD:: samplers
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: record
+Start or stop recording
+
+ARGUMENT:: state
+Boolean
+
+EXAMPLES::
+
+code::
+(some example code)
+::
